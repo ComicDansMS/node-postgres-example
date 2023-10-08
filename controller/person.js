@@ -22,6 +22,17 @@ class PersonController {
       console.error(err);
     }
   }
+
+  async readPerson(req, res) {
+    console.log('Route: /create-person');
+
+    try {
+      const id = await personService.readPerson(req.body);
+      res.status(201).json({ id: id });
+    } catch (err) {
+      console.error(err);
+    }
+  }
 }
 
 export default new PersonController();

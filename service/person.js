@@ -1,9 +1,9 @@
-import personDOA from "../doa/person.js";
+import personDAO from "../dao/person.js";
 
 class PersonService {
   createTable() {
     console.log('PersonService -> createTable()')
-    return personDOA.createTable();
+    return personDAO.createTable();
   }
 
   createPerson(personDto) {
@@ -11,7 +11,13 @@ class PersonService {
 
     const { firstName, lastName, email } = personDto;
 
-    return personDOA.createPerson(firstName, lastName, email);
+    return personDAO.createPerson(firstName, lastName, email);
+  }
+
+  readPerson() {
+    console.log('PersonService -> readPerson()')
+
+    return personDAO.readPerson();
   }
 }
 
